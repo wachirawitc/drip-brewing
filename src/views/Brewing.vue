@@ -1,11 +1,13 @@
 <template>
-  <router-view/>
+  Brewing
 </template>
 
 <script>
-
 export default {
-  name: 'App',
-  components: {}
+  name: 'Brewing'
 }
 </script>
+
+<style scoped>
+
+</style>
