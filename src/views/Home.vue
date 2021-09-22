@@ -8,7 +8,7 @@
         </div>
       </div>
       <div class="row mb-4">
-        <div class="col-2">
+        <div class="col-3">
           <span class="title">ปริมาณกาแฟ (g)</span>
           <div>{{ item.CoffeeWeightInGram }}</div>
         </div>
@@ -16,15 +16,19 @@
           <span class="title">Ratio</span>
           <div>{{ item.Ratio }}</div>
         </div>
-        <div class="col-2">
+        <div class="col-3">
           <span class="title">Total Water (ml)</span>
           <div>{{ item.CoffeeWeightInGram * item.Ratio }}</div>
+        </div>
+        <div class="col-2">
+          <span class="title">Total Times</span>
+          <div>{{ getTotalTimes(item) }}</div>
         </div>
       </div>
       <div class="row mb-4">
         <div class="col-2 text-center" v-for="pour in item.Pours" :key="pour.TimeInSecond">
-          <div>Time {{pour.TimeInSecond}} seconds</div>
-          <div>Water {{pour.WaterInMilliliter}} ml</div>
+          <div>Time {{ pour.TimeInSecond }} seconds</div>
+          <div>Water {{ pour.WaterInMilliliter }} ml</div>
         </div>
       </div>
     </div>
@@ -39,7 +43,12 @@ export default {
   data: () => ({
     sources: drip,
     summaries: []
-  })
+  }),
+  methods: {
+    getTotalTimes: function (item) {
+      return 99
+    }
+  }
 }
 </script>
 
