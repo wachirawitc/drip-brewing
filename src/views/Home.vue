@@ -26,6 +26,11 @@
         </div>
       </div>
       <div class="row mb-4">
+        <div class="col-md-12">
+          aa
+        </div>
+      </div>
+      <div class="row mb-4">
         <div class="col-2 text-center" v-for="pour in item.Pours" :key="pour.TimeInSecond">
           <div class="pour-detail">{{ pour.TimeInSecond }}s/{{ pour.WaterInMilliliter }}ml</div>
         </div>
@@ -35,6 +40,7 @@
 </template>
 
 <script>
+
 import drip from './drip.json'
 
 export default {
