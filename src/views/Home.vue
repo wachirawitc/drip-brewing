@@ -1,28 +1,28 @@
 <template>
   <div class="row">
     <div class="col-md-12" v-for="item in sources.Brewing" :key="item.Name">
-      <div class="row mb-2">
+      <div class="row mt-2 mb-2">
         <div class="col-12">
-          <span>Name</span>
+          <span class="title">Name</span>
           <div>{{ item.Name }}</div>
         </div>
       </div>
       <div class="row mb-4">
-        <div class="col-3">
+        <div class="col-3 text-center">
           <span class="title">ปริมาณกาแฟ (g)</span>
           <div>{{ item.CoffeeWeightInGram }}</div>
         </div>
-        <div class="col-2">
+        <div class="col-2 text-center">
           <span class="title">Ratio</span>
           <div>{{ item.Ratio }}</div>
         </div>
-        <div class="col-3">
+        <div class="col-3 text-center">
           <span class="title">Total Water (ml)</span>
           <div>{{ item.CoffeeWeightInGram * item.Ratio }}</div>
         </div>
-        <div class="col-2">
-          <span class="title">Total Times</span>
-          <div>{{ getTotalTimes(item) }}</div>
+        <div class="col-3 text-center">
+          <span class="title">Total Times (minutes)</span>
+          <div>{{ getTotalTimes(item.Pours) }}</div>
         </div>
       </div>
       <div class="row mb-4">
@@ -45,8 +45,13 @@ export default {
     summaries: []
   }),
   methods: {
-    getTotalTimes: function (item) {
-      return 99
+    getTotalTimes: function (pours) {
+      const data = new Date(0, 0, 0, 0, 0, 0, 0)
+      for (let index = 0; index < pours.length; index++) {
+        const pour = pours[index]
+        data.setSeconds(data.getSeconds() + pour.TimeInSecond)
+      }
+      return data.getMinutes() + ':' + data.getSeconds()
     }
   }
 }
