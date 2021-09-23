@@ -42,7 +42,7 @@
             <img src="images/img_glass.png">
           </div>
           <div class="pour-water mt-1">{{ pour.PourWater }}ml</div>
-          <div class="pour-time mt-2">{{ pour.start }} - {{ pour.end }}</div>
+          <div class="pour-time mt-2">{{ pour.start }} - {{ pour.end }} ({{pour.TimeInSecond}}s)</div>
           <div class="pour-total-water">{{ pour.TotalWater }}ml</div>
         </div>
       </div>
@@ -83,6 +83,7 @@ export default {
         end: moment(end).format('mm:ss'),
         TotalWater: lastedWater,
         PourWater: pour.WaterInMilliliter,
+        TimeInSecond: pour.TimeInSecond,
         Status: 'Ready'
       })
       fromTime = end

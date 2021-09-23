@@ -2,7 +2,7 @@
   "Brewing": [
     {
       "Id": 1,
-      "Name": "Sample 1",
+      "Name": "Tetsu Kasuya #1 (Default taste)",
       "CoffeeWeightInGram": 20,
       "Ratio": 15,
       "Pours": [
@@ -30,28 +30,24 @@
     },
     {
       "Id": 2,
-      "Name": "Sample 2",
+      "Name": "Tetsu Kasuya #2 (Sweet taste)",
       "CoffeeWeightInGram": 20,
       "Ratio": 15,
       "Pours": [
         {
-          "TimeInSecond": 45,
-          "WaterInMilliliter": 60
+          "TimeInSecond": 40,
+          "WaterInMilliliter": 40
         },
         {
-          "TimeInSecond": 45,
-          "WaterInMilliliter": 60
+          "TimeInSecond": 50,
+          "WaterInMilliliter": 80
         },
         {
-          "TimeInSecond": 45,
-          "WaterInMilliliter": 60
+          "TimeInSecond": 50,
+          "WaterInMilliliter": 120
         },
         {
-          "TimeInSecond": 45,
-          "WaterInMilliliter": 60
-        },
-        {
-          "TimeInSecond": 45,
+          "TimeInSecond": 40,
           "WaterInMilliliter": 60
         }
       ]
