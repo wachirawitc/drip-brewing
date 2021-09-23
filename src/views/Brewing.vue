@@ -30,8 +30,9 @@
           <div>
             <img src="images/img_glass.png">
           </div>
-          <div class="pour-water">{{ pour.WaterInMilliliter }}ml</div>
-          <div class="pour-time">{{ pour.start }} - {{ pour.end }}</div>
+          <div class="pour-water mt-1">{{ pour.PourWater }}ml</div>
+          <div class="pour-time mt-2">{{ pour.start }} - {{ pour.end }}</div>
+          <div class="pour-total-water">{{ pour.TotalWater }}ml</div>
         </div>
       </div>
     </div>
@@ -62,7 +63,8 @@ export default {
       self.information.push({
         start: moment(start).format('mm:ss'),
         end: moment(end).format('mm:ss'),
-        WaterInMilliliter: lastedWater
+        TotalWater: lastedWater,
+        PourWater: pour.WaterInMilliliter
       })
       fromTime = end
     })

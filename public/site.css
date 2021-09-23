@@ -16,9 +16,14 @@ span.title {
 
 .pour-water {
     font-size: 0.8em;
-    font-weight: normal;
-    margin-top: 10px;
-    color: #EFEFEF;
+    font-weight: lighter;
+    color: #FFFFFF;
+}
+
+.pour-total-water {
+    font-size: 1em;
+    font-weight: lighter;
+    color: #05eb8b;
 }
 
 .pour-time{
