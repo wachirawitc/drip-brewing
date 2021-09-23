@@ -1,5 +1,6 @@
 # drip-brewing
 
+[Lets go](https://drip-brewing.web.app/)
 ![Alt Text](docs/sample.gif)
 
 ## Project setup
