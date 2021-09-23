@@ -1,15 +1,15 @@
 <template>
   <div class="row">
     <div class="col-md-12">
-      <div class="row mt-2 mb-2">
+      <div class="row">
         <div class="col-12">
           <span class="title">Name</span>
           <div class="brewing-name">{{ brewing.Name }}</div>
         </div>
       </div>
       <div class="row">
-        <div class="col-md-12 text-center">
-          xxx
+        <div class="col-md-12 text-center count-down">
+          00:00
         </div>
       </div>
       <div class="row mb-4">
