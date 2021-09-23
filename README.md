@@ -1,5 +1,7 @@
 # drip-brewing
 
+![Alt Text](docs/sample.gif)
+
 ## Project setup
 ```
 npm install
