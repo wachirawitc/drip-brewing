@@ -4,7 +4,7 @@
       "Id": 1,
       "Name": "Sample",
       "CoffeeWeightInGram": 20,
-      "Ratio": 17,
+      "Ratio": 15,
       "Pours": [
         {
           "TimeInSecond": 45,
