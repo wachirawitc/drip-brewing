@@ -2,7 +2,35 @@
   "Brewing": [
     {
       "Id": 1,
-      "Name": "Sample",
+      "Name": "Sample 1",
+      "CoffeeWeightInGram": 20,
+      "Ratio": 15,
+      "Pours": [
+        {
+          "TimeInSecond": 45,
+          "WaterInMilliliter": 60
+        },
+        {
+          "TimeInSecond": 45,
+          "WaterInMilliliter": 60
+        },
+        {
+          "TimeInSecond": 45,
+          "WaterInMilliliter": 60
+        },
+        {
+          "TimeInSecond": 45,
+          "WaterInMilliliter": 60
+        },
+        {
+          "TimeInSecond": 45,
+          "WaterInMilliliter": 60
+        }
+      ]
+    },
+    {
+      "Id": 2,
+      "Name": "Sample 2",
       "CoffeeWeightInGram": 20,
       "Ratio": 15,
       "Pours": [

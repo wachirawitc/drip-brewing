@@ -55,3 +55,14 @@ span.title {
     color: #05eb8b;
     font-family: 'MontserratLight';
 }
+
+.brewing-menu {
+    font-family: 'MontserratLight';
+    font-size: 1.2em;
+    font-weight: bold;
+}
+
+.brewing-menu a {
+    text-decoration: none !important;
+    color: #112031 !important;
+}

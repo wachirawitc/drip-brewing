@@ -1,18 +1,39 @@
 <template>
   <div class="row">
-    <div class="col-md-12">
-      <router-link :to="{ path: 'Brewing', query: { id: 1 }}">Brewing</router-link>
+    <div class="col-md-12 mt-2 p-4 bg-white">
+      <div class="brewing-menu mb-2" v-for="menu in menus" :key="menu.Id">
+        <router-link :to="{ path: 'Brewing', query: { id: menu.id }}">
+          <div class="d-inline-block me-2">
+            <img src="images/img_coffee.png">
+          </div>
+          <div class="d-inline-block">
+            {{ menu.name }}
+          </div>
+        </router-link>
+      </div>
     </div>
   </div>
 </template>
 
 <script>
+import drip from './drip.json'
 
 export default {
   name: 'Home',
   data: () => ({
-    summaries: []
+    sources: drip,
+    menus: []
   }),
+  created () {
+    const self = this
+    self.sources.Brewing.forEach((brewing) => {
+      self.menus.push({
+        id: brewing.Id,
+        name: brewing.Name
+      })
+    })
+    console.log(self.menus)
+  },
   methods: {
     getTotalTimes: function () {
       return 0
