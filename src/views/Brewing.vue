@@ -4,7 +4,12 @@
       <div class="row mt-2 mb-2">
         <div class="col-12">
           <span class="title">Name</span>
-          <div class="detail">{{ brewing.Name }}</div>
+          <div class="brewing-name">{{ brewing.Name }}</div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-12 text-center">
+          xxx
         </div>
       </div>
       <div class="row mb-4">
@@ -26,7 +31,7 @@
         </div>
       </div>
       <div class="row mb-4">
-        <div class="col-2 text-center" v-for="pour in information" :key="pour.WaterInMilliliter">
+        <div class="col-md-2 p-1 text-center" v-for="pour in information" :key="pour.WaterInMilliliter">
           <div>
             <img src="images/img_glass.png">
           </div>
@@ -48,7 +53,8 @@ export default {
   data: () => ({
     sources: drip,
     information: [],
-    brewing: {}
+    brewing: {},
+    currentTime: null
   }),
   created () {
     const self = this

@@ -1,3 +1,15 @@
+@font-face {
+    font-family: 'MontserratLight';
+    src: url('fonts/montserrat-light.ttf'); /* IE9 Compat Modes */
+    src: url('fonts/montserrat-light.ttf?#iefix') format('embedded-opentype'), /* IE6-IE8 */ url('fonts/montserrat-light.ttf') format('woff'), /* Modern Browsers */ url('fonts/montserrat-light.ttf') format('truetype'), /* Safari, Android, iOS */ url('fonts/montserrat-light.ttf#svgFontName') format('svg'); /* Legacy iOS */
+}
+
+@font-face {
+    font-family: 'MontserratThin';
+    src: url('fonts/montserrat-thin.ttf'); /* IE9 Compat Modes */
+    src: url('fonts/montserrat-thin.ttf?#iefix') format('embedded-opentype'), /* IE6-IE8 */ url('fonts/montserrat-thin.ttf') format('woff'), /* Modern Browsers */ url('fonts/montserrat-thin.ttf') format('truetype'), /* Safari, Android, iOS */ url('fonts/montserrat-thin.ttf#svgFontName') format('svg'); /* Legacy iOS */
+}
+
 body {
     background-color: #343F56;
     color: #FFFFFF;
@@ -5,29 +17,34 @@ body {
 
 span.title {
     font-size: 0.7em;
-    font-weight: bold;
+    font-family: 'MontserratLight';
 }
 
 .detail {
     color: #05eb8b;
     font-size: 1.5em;
-    font-weight: lighter;
+}
+
+.brewing-name {
+    color: #05eb8b;
+    font-size: 1em;
+    font-family: 'MontserratThin';
 }
 
 .pour-water {
     font-size: 0.8em;
-    font-weight: lighter;
     color: #FFFFFF;
+    font-family: 'MontserratThin';
 }
 
 .pour-total-water {
     font-size: 1em;
-    font-weight: lighter;
     color: #05eb8b;
+    font-family: 'MontserratLight';
 }
 
-.pour-time{
-    font-size: 1em;
-    font-weight: lighter;
+.pour-time {
+    font-size: 0.9em;
     color: #05eb8b;
+    font-family: 'MontserratLight';
 }
