@@ -8,11 +8,14 @@
         </div>
       </div>
       <div class="row">
-        <div class="col-md-2 m-auto">
+        <div class="col-md-2 m-auto" v-if="timerEnabled == false" v-on:click="play()">
           <img width="80" src="images/img_play.png">
         </div>
+        <div class="col-md-2 m-auto" v-on:click="pause()" v-else>
+          <img width="80" src="images/img_pause.png">
+        </div>
         <div class="col-md-10 count-down">
-          00:00
+          {{ currentTimeText }}
         </div>
       </div>
       <div class="row mb-4">
@@ -30,7 +33,7 @@
         </div>
         <div class="col-3 text-center">
           <span class="title">Total Times (minutes)</span>
-          <div class="detail">{{ getTotalTimes(brewing.Pours) }}</div>
+          <div class="detail">{{ getTotalTimes() }}</div>
         </div>
       </div>
       <div class="row mb-4">
@@ -57,14 +60,19 @@ export default {
     sources: drip,
     information: [],
     brewing: {},
-    currentTime: null
+    timer: null,
+    expiryTime: null,
+    currentTimeText: '00:00',
+    timerEnabled: false,
+    timerCount: 600
   }),
   created () {
     const self = this
+    let fromTime = moment(new Date(0, 0, 0, 0, 0, 0, 0))
     const brewing = self.sources.Brewing.find(x => x.Id === 1)
     self.brewing = brewing
+    self.timer = fromTime.clone()
     let lastedWater = 0
-    let fromTime = moment(new Date(0, 0, 0, 0, 0, 0, 0))
     brewing.Pours.forEach((pour) => {
       lastedWater = lastedWater + pour.WaterInMilliliter
       const start = fromTime.clone()
@@ -73,19 +81,44 @@ export default {
         start: moment(start).format('mm:ss'),
         end: moment(end).format('mm:ss'),
         TotalWater: lastedWater,
-        PourWater: pour.WaterInMilliliter
+        PourWater: pour.WaterInMilliliter,
+        Status: 'Ready'
       })
       fromTime = end
     })
+    self.expiryTime = fromTime.clone()
+  },
+  watch: {
+    timerEnabled (value) {
+      if (value) {
+        setTimeout(() => {
+          this.timerCount--
+        }, 1000)
+      }
+    },
+    timerCount: {
+      handler (value) {
+        const self = this
+        if (value > 0 && self.timerEnabled) {
+          setTimeout(() => {
+            self.timer = self.timer.add(1, 'seconds')
+            self.currentTimeText = moment(self.timer).format('mm:ss')
+            self.timerCount--
+          }, 1000)
+        }
+      },
+      immediate: true
+    }
   },
   methods: {
-    getTotalTimes: function (pours) {
-      const data = new Date(0, 0, 0, 0, 0, 0, 0)
-      for (let index = 0; index < pours.length; index++) {
-        const pour = pours[index]
-        data.setSeconds(data.getSeconds() + pour.TimeInSecond)
-      }
-      return moment(data).format('mm:ss')
+    getTotalTimes: function () {
+      return moment(this.expiryTime).format('mm:ss')
+    },
+    play: function () {
+      this.timerEnabled = true
+    },
+    pause: function () {
+      this.timerEnabled = false
     }
   }
 }
