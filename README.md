@@ -1,4 +1,4 @@
-# drip-brewing
+# Drip Brewing
 
 [Lets go Demo site](https://drip-brewing.web.app/) 
 
