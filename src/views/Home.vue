@@ -1,7 +1,7 @@
 <template>
   <div class="row">
     <div class="col-md-12">
-      <router-link to="/Brewing">Brewing</router-link>
+      <router-link :to="{ path: 'Brewing', query: { id: 1 }}">Brewing</router-link>
     </div>
   </div>
 </template>

@@ -68,8 +68,9 @@ export default {
   }),
   created () {
     const self = this
+    const id = parseInt(self.$route.query.id, 10)
     let fromTime = moment(new Date(0, 0, 0, 0, 0, 0, 0))
-    const brewing = self.sources.Brewing.find(x => x.Id === 1)
+    const brewing = self.sources.Brewing.find(x => x.Id === id)
     self.brewing = brewing
     self.timer = fromTime.clone()
     let lastedWater = 0
