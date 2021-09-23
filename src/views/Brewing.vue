@@ -1,4 +1,10 @@
 <template>
+  <div class="row mt-4 mb-4">
+    <div class="col-md-12 back-home">
+      <router-link :to="{ path: '/'}">
+        <img class="me-2" width="20" src="images/img_back.png"> Back</router-link>
+    </div>
+  </div>
   <div class="row">
     <div class="col-md-12">
       <div class="row">
@@ -8,14 +14,18 @@
         </div>
       </div>
       <div class="row">
-        <div class="col-md-2 m-auto" v-if="timerEnabled == false" v-on:click="play()">
-          <img width="80" src="images/img_play.png">
-        </div>
-        <div class="col-md-2 m-auto" v-on:click="pause()" v-else>
-          <img width="80" src="images/img_pause.png">
-        </div>
-        <div class="col-md-10 count-down">
-          {{ currentTimeText }}
+        <div class="col-md-12 text-center count-down">
+          <div class="d-inline-block me-4">
+            <div v-if="timerEnabled == false" v-on:click="play()">
+              <img width="80" src="images/img_play.png">
+            </div>
+            <div v-on:click="pause()" v-else>
+              <img width="80" src="images/img_pause.png">
+            </div>
+          </div>
+          <div class="d-inline-block">
+            {{ currentTimeText }}
+          </div>
         </div>
       </div>
       <div class="row mb-4">
@@ -37,13 +47,16 @@
         </div>
       </div>
       <div class="row mb-4">
-        <div class="col-md-2 p-1 text-center" v-for="pour in information" :key="pour.WaterInMilliliter">
-          <div>
-            <img src="images/img_glass.png">
+        <div class="col-md-12 text-center">
+          <div class="pour-box p-1 text-center" v-for="pour in information" :key="pour.WaterInMilliliter">
+            <div>
+              <img width="48" src="images/img_glass_default.png" alt="Glass" v-if="pour.Status == 'Ready'">
+              <img width="48" src="images/img_glass_active.png" alt="Glass" v-else>
+            </div>
+            <div class="pour-water mt-1">{{ pour.PourWater }}ml</div>
+            <div class="pour-time mt-2">{{ pour.startText }} - {{ pour.endText }} ({{ pour.TimeInSecond }}s)</div>
+            <div class="pour-total-water">{{ pour.TotalWater }}ml</div>
           </div>
-          <div class="pour-water mt-1">{{ pour.PourWater }}ml</div>
-          <div class="pour-time mt-2">{{ pour.start }} - {{ pour.end }} ({{pour.TimeInSecond}}s)</div>
-          <div class="pour-total-water">{{ pour.TotalWater }}ml</div>
         </div>
       </div>
     </div>
@@ -52,7 +65,7 @@
 
 <script>
 import moment from 'moment'
-import drip from './drip.json'
+import drip from './data.json'
 
 export default {
   name: 'Brewing',
@@ -79,8 +92,10 @@ export default {
       const start = fromTime.clone()
       const end = fromTime.add(pour.TimeInSecond, 'seconds')
       self.information.push({
-        start: moment(start).format('mm:ss'),
-        end: moment(end).format('mm:ss'),
+        startTime: start,
+        startText: moment(start).format('mm:ss'),
+        endText: moment(end).format('mm:ss'),
+        endTime: end,
         TotalWater: lastedWater,
         PourWater: pour.WaterInMilliliter,
         TimeInSecond: pour.TimeInSecond,
@@ -105,6 +120,12 @@ export default {
           setTimeout(() => {
             self.timer = self.timer.add(1, 'seconds')
             self.currentTimeText = moment(self.timer).format('mm:ss')
+            self.information.forEach((pour) => {
+              const isAfter = moment(self.currentTimeText, 'mm:ss').isAfter(moment(pour.startText, 'mm:ss'))
+              if (isAfter) {
+                pour.Status = 'Finished'
+              }
+            })
             self.timerCount--
           }, 1000)
         }

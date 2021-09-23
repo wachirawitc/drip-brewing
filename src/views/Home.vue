@@ -1,7 +1,7 @@
 <template>
   <div class="row">
     <div class="col-md-12 mt-2 p-4 bg-white">
-      <div class="brewing-menu mb-2" v-for="menu in menus" :key="menu.Id">
+      <div class="brewing-menu mb-4" v-for="menu in menus" :key="menu.Id">
         <router-link :to="{ path: 'Brewing', query: { id: menu.id }}">
           <div class="d-inline-block me-2">
             <img src="images/img_coffee.png">
@@ -16,7 +16,7 @@
 </template>
 
 <script>
-import drip from './drip.json'
+import drip from './data.json'
 
 export default {
   name: 'Home',

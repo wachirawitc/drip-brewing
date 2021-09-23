@@ -40,13 +40,13 @@ span.title {
 
 .pour-total-water {
     font-size: 1em;
-    color: #05eb8b;
+    color: #FFFFFF;
     font-family: 'MontserratLight';
 }
 
 .pour-time {
     font-size: 0.9em;
-    color: #05eb8b;
+    color: #FFFFFF;
     font-family: 'MontserratLight';
 }
 
@@ -65,4 +65,20 @@ span.title {
 .brewing-menu a {
     text-decoration: none !important;
     color: #112031 !important;
+}
+
+.pour-box {
+    width: 150px;
+    display: inline-block;
+}
+
+.back-home {
+    font-family: 'MontserratLight';
+    font-size: 1.2em;
+    color: #FFFFFF;
+}
+
+.back-home a{
+    color: #FFFFFF;
+    text-decoration: none;
 }
