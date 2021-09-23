@@ -8,7 +8,10 @@
         </div>
       </div>
       <div class="row">
-        <div class="col-md-12 text-center count-down">
+        <div class="col-md-2 m-auto">
+          <img width="80" src="images/img_play.png">
+        </div>
+        <div class="col-md-10 count-down">
           00:00
         </div>
       </div>
