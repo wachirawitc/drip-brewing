@@ -54,12 +54,11 @@ export default {
     const brewing = self.sources.Brewing.find(x => x.Id === 1)
     self.brewing = brewing
     let lastedWater = 0
-    let fromTime = new Date(0, 0, 0, 0, 0, 0, 0)
+    let fromTime = moment(new Date(0, 0, 0, 0, 0, 0, 0))
     brewing.Pours.forEach((pour) => {
       lastedWater = lastedWater + pour.WaterInMilliliter
-      const start = fromTime
-      const end = new Date(0, 0, 0, 0, 0, 0, 0)
-      end.setSeconds(start.getSeconds() + pour.TimeInSecond)
+      const start = fromTime.clone()
+      const end = fromTime.add(pour.TimeInSecond, 'seconds')
       self.information.push({
         start: moment(start).format('mm:ss'),
         end: moment(end).format('mm:ss'),
