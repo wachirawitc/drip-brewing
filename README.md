@@ -1,6 +1,7 @@
-# drip-brewing
+# Drip Brewing
 
-[Lets go](https://drip-brewing.web.app/)
+[Lets go Demo site](https://drip-brewing.web.app/) 
+
 ![Alt Text](docs/sample.gif)
 
 ## Project setup
