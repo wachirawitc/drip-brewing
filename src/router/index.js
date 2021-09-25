@@ -1,11 +1,9 @@
-import { createRouter, createMemoryHistory, createWebHistory } from 'vue-router'
+import { createRouter, createWebHistory } from 'vue-router'
 
 import Home from '../views/Home'
 import Brewing from '../views/Brewing'
 
-const isServer = typeof window === 'undefined'
-
-const history = isServer ? createMemoryHistory() : createWebHistory()
+const history = createWebHistory()
 
 const routes = [
   {

@@ -2,7 +2,7 @@
   <div class="row mt-4 mb-4">
     <div class="col-md-12 back-home">
       <router-link :to="{ path: '/'}">
-        <img class="me-2" width="20" src="images/img_back.png"> Back</router-link>
+        <img class="me-2" width="20" src="@/assets/images/img_back.png"> Back</router-link>
     </div>
   </div>
   <div class="row">
@@ -17,10 +17,10 @@
         <div class="col-md-12 text-center count-down">
           <div class="d-inline-block me-4">
             <div v-if="timerEnabled == false" v-on:click="play()">
-              <img width="80" src="images/img_play.png">
+              <img width="80" src="@/assets/images/img_play.png">
             </div>
             <div v-on:click="pause()" v-else>
-              <img width="80" src="images/img_pause.png">
+              <img width="80" src="@/assets/images/img_pause.png">
             </div>
           </div>
           <div class="d-inline-block">
@@ -50,8 +50,8 @@
         <div class="col-md-12 text-center">
           <div class="pour-box p-1 text-center" v-for="pour in information" :key="pour.WaterInMilliliter">
             <div>
-              <img width="48" src="images/img_glass_default.png" alt="Glass" v-if="pour.Status == 'Ready'">
-              <img width="48" src="images/img_glass_active.png" alt="Glass" v-else>
+              <img width="48" src="@/assets/images/img_glass_default.png" alt="Glass" v-if="pour.Status == 'Ready'">
+              <img width="48" src="@/assets/images/img_glass_active.png" alt="Glass" v-else>
             </div>
             <div class="pour-water mt-1">{{ pour.PourWater }}ml</div>
             <div class="pour-time mt-2">{{ pour.startText }} - {{ pour.endText }} ({{ pour.TimeInSecond }}s)</div>

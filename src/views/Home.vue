@@ -4,7 +4,7 @@
       <div class="brewing-menu mb-4" v-for="menu in menus" :key="menu.Id">
         <router-link :to="{ path: 'Brewing', query: { id: menu.id }}">
           <div class="d-inline-block me-2">
-            <img src="images/img_coffee.png">
+            <img src="@/assets/images/img_coffee.png">
           </div>
           <div class="d-inline-block">
             {{ menu.name }}
@@ -32,7 +32,6 @@ export default {
         name: brewing.Name
       })
     })
-    console.log(self.menus)
   },
   methods: {
     getTotalTimes: function () {
