@@ -2,7 +2,8 @@
   <div class="row mt-4 mb-4">
     <div class="col-md-12 back-home">
       <router-link :to="{ path: '/'}">
-        <img class="me-2" width="20" src="@/assets/images/img_back.png"> Back</router-link>
+        <img class="me-2" width="20" src="@/assets/images/img_back.png"> Back
+      </router-link>
     </div>
   </div>
   <div class="row">
@@ -64,6 +65,8 @@
 </template>
 
 <script>
+import 'bootstrap/dist/css/bootstrap.min.css'
+import 'bootstrap'
 import moment from 'moment'
 import drip from './data.json'
 

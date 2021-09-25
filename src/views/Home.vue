@@ -16,6 +16,8 @@
 </template>
 
 <script>
+import 'bootstrap/dist/css/bootstrap.min.css'
+import 'bootstrap'
 import drip from './data.json'
 
 export default {
@@ -40,7 +42,4 @@ export default {
   }
 }
 </script>
-
-<style scoped>
-
-</style>
+<style src='@/assets/site.css'></style>
