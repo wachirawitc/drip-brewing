@@ -51,6 +51,30 @@
           "WaterInMilliliter": 50
         }
       ]
+    },
+    {
+      "Id": 3,
+      "Name": "Drip on ice",
+      "CoffeeWeightInGram": 20,
+      "Ratio": 15,
+      "Pours": [
+        {
+          "TimeInSecond": 45,
+          "WaterInMilliliter": 40
+        },
+        {
+          "TimeInSecond": 45,
+          "WaterInMilliliter": 60
+        },
+        {
+          "TimeInSecond": 45,
+          "WaterInMilliliter": 50
+        },
+        {
+          "TimeInSecond": 45,
+          "WaterInMilliliter": 50
+        }
+      ]
     }
   ]
 }
