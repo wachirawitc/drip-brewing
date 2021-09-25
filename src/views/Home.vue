@@ -34,11 +34,6 @@ export default {
         name: brewing.Name
       })
     })
-  },
-  methods: {
-    getTotalTimes: function () {
-      return 0
-    }
   }
 }
 </script>
