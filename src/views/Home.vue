@@ -18,7 +18,7 @@
 <script>
 import 'bootstrap/dist/css/bootstrap.min.css'
 import 'bootstrap'
-import drip from './data.json'
+import drip from '@/assets/source/data.json'
 
 export default {
   name: 'Home',
