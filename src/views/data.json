@@ -39,12 +39,12 @@
           "WaterInMilliliter": 40
         },
         {
-          "TimeInSecond": 50,
-          "WaterInMilliliter": 80
+          "TimeInSecond": 60,
+          "WaterInMilliliter": 120
         },
         {
-          "TimeInSecond": 50,
-          "WaterInMilliliter": 120
+          "TimeInSecond": 60,
+          "WaterInMilliliter": 80
         },
         {
           "TimeInSecond": 40,
