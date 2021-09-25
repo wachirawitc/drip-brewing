@@ -36,7 +36,7 @@
       "Pours": [
         {
           "TimeInSecond": 40,
-          "WaterInMilliliter": 40
+          "WaterInMilliliter": 50
         },
         {
           "TimeInSecond": 60,
@@ -48,7 +48,7 @@
         },
         {
           "TimeInSecond": 40,
-          "WaterInMilliliter": 60
+          "WaterInMilliliter": 50
         }
       ]
     }
